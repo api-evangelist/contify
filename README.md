@@ -1,42 +1,53 @@
 # Contify (contify)
-Contify is an AI-powered competitive intelligence platform that helps businesses track and analyze their competitors' strategies, market trends, and industry news. By collecting and organizing data from various sources such as news websites, social media, and company websites, Contify provides businesses with valuable insights to make informed decisions and stay ahead of the competition. With features like real-time alerts, customizable dashboards, and comprehensive reports, Contify enables companies to monitor their competitive landscape effectively and drive growth.
+
+Contify is an AI-powered market and competitive intelligence platform that helps businesses track competitor activity, market trends, and industry news. It exposes a REST News API that delivers structured, deduplicated, and enriched business news data on companies, industries, and topics.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/contify/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consumer 
-- **Access:** 3rd-Party 
+- **Type:** Contract
+- **Position:** Consumer
+- **Access:** 3rd-Party
 
 ## Tags:
 
- - Competition, Strategies
+ - Competitive Intelligence, Market Intelligence, News, Strategies
 
 ## Timestamps
 
-- **Created:** 2025-02-09 
-- **Modified:** 2025-03-01 
+- **Created:** 2025-02-09
+- **Modified:** 2026-04-28
 
 ## APIs
 
-### Contify
-Contify is an AI-powered market intelligence platform that helps businesses stay updated on industry trends, competitor activities, and market insights. By gathering and analyzing information from various online sources, Contify provides users with real-time, actionable insights that can help them make informed decisions and stay ahead of the competition. With its intuitive search and filtering capabilities, Contify enables businesses to access relevant data quickly and easily, saving time and resources in the research process. Overall, Contify is a valuable tool for any organization looking to stay competitive in today's fast-paced business environment.
+### Contify News API
+The Contify News API is a developer-friendly REST/JSON API that aggregates, deduplicates, and enriches business news from over a million curated sources, covering 700,000+ companies and 117+ languages with auto-translation to English. It provides advanced entity tagging, sentiment analysis, AI-generated highlights, and 15+ queryable metadata fields, with delivery via API endpoints and webhook integration backed by a 99.9% uptime SLA. Common use cases include feeding competitive intelligence dashboards, tracking key accounts and industries, powering sales and marketing alerts, and providing news context to AI agents.
 
-**Human URL:** [ https://www.contify.com/news-api/]( https://www.contify.com/news-api/)
-
+**Human URL:** [https://www.contify.com/news-api/](https://www.contify.com/news-api/)
 
 #### Tags:
 
- - Competition, Strategies
+ - Business News, Market Intelligence, News, REST
 
 #### Properties
 
-- [Documentation]( https://www.contify.com/news-api/)
+- [Documentation](https://www.contify.com/news-api/)
+- [DeveloperPortal](https://developer.contify.com/)
+- [SignUp](https://www.contify.com/news-api/)
+
+## Common Properties
+
+- [Website](https://www.contify.com/)
+- [Documentation](https://www.contify.com/news-api/)
+- [DeveloperPortal](https://developer.contify.com/)
+- [Blog](https://www.contify.com/blog/)
+- [PrivacyPolicy](https://www.contify.com/privacy-policy/)
+- [TermsOfService](https://www.contify.com/terms-of-service/)
+- [ContactUs](https://www.contify.com/contact-us/)
 
 ## Maintainers
 
 **FN:** Kin Lane
 
-**Email:** info@apievangelist.com
-
+**Email:** kin@apievangelist.com
