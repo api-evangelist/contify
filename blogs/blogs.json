@@ -1,0 +1,13 @@
+{
+  "repo": "contify",
+  "feeds": [
+    {
+      "source": "https://www.contify.com/blog/",
+      "feed_url": "https://www.contify.com/feed/",
+      "title": "Contify | Market and Competitive Intelligence Software",
+      "saved": 0
+    }
+  ],
+  "fetched": "2026-05-09T20:17:51Z",
+  "post_count": 0
+}
