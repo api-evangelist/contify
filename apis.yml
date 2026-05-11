@@ -63,6 +63,24 @@ common:
   - type: ContactUs
     url: https://www.contify.com/contact-us/
 
+  - type: Integrations
+    url: https://www.contify.com/integrations/
+integrations:
+  - name: Contify
+  - name: G2
+  - name: icon
+  - name: linkedin
+  - name: twitter
+  - name: instagram
+  - name: Facebook
+  - name: plus
+  - name: chevron down
+  - name: Scip
+  - name: Frost-and-sullivan
+  - name: SaaS
+  - name: G2-high-performer
+  - name: AICPA
+  - name: GDPR
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
