@@ -7,7 +7,7 @@ description: >-
   helps businesses track competitor activity, market trends, and industry
   news. It exposes a REST News API that delivers structured, deduplicated,
   and enriched business news data on companies, industries, and topics.
-type: Contract
+kind: contract
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
