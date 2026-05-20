@@ -48,6 +48,10 @@ apis:
       sales and marketing alerts, and providing news context to AI agents.
 
 common:
+  - type: GitHubOrganization
+    url: https://github.com/contifyhub
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/contify
   - type: Website
     url: https://www.contify.com/
   - type: Documentation
