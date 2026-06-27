@@ -35,7 +35,7 @@ apis:
       - url: https://developer.contify.com/
         type: DeveloperPortal
       - url: https://www.contify.com/news-api/
-        type: SignUp
+        type: Signup
     description: >-
       The Contify News API is a developer-friendly REST/JSON API that
       aggregates, deduplicates, and enriches business news from over a million
