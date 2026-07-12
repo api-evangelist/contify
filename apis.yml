@@ -48,6 +48,8 @@ apis:
       sales and marketing alerts, and providing news context to AI agents.
 
 common:
+  - type: DomainSecurity
+    url: security/contify-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/contifyhub
   - type: LinkedIn
