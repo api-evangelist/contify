@@ -8,9 +8,21 @@ description: >-
   news. It exposes a REST News API that delivers structured, deduplicated,
   and enriched business news data on companies, industries, and topics.
 kind: contract
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/contify.png
 tags:
   - Competitive Intelligence
   - Market Intelligence
