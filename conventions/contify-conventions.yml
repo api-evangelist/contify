@@ -1,0 +1,154 @@
+generated: '2026-09-05'
+method: searched
+source: https://www.contify.com/resources/blog/business-news-api-v4/
+supporting_sources:
+  - https://www.contify.com/news-api/
+  - https://api.contify.com/v4.1/updates
+note: >-
+  Contify publishes no OpenAPI. Everything below is either quoted from a Contify page or
+  observed on a live unauthenticated request against https://api.contify.com/v4.1/.
+  Where a convention is not published, it is recorded as unknown rather than guessed.
+api_style:
+  protocol: REST
+  media_type: application/json
+  methods_documented:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+  methods_evidenced:
+    - GET
+  evidence: >-
+    "Structured RESTful JSON outputs with standard HTTP methods (GET, POST, PUT, DELETE)"
+    — https://www.contify.com/news-api/ . Only GET is evidenced by Contify's own published
+    curl examples; the write surface, if any, is documented only behind the login.
+base_url: https://api.contify.com/v4.1/
+authentication:
+  style: api-key-pair-in-headers
+  headers:
+    - APPID
+    - APPSECRET
+  detail: authentication/contify-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v4.1
+  observed_live:
+    - version: v4.1
+      status: 403
+    - version: v4
+      status: 403
+  observed_absent:
+    - version: v3
+      status: 404
+    - version: v2
+      status: 404
+    - version: v1
+      status: 404
+  header_negotiation: false
+  note: >-
+    Version is the first path segment. v4.1 and v4 both answer 403 (present, auth-gated)
+    on 2026-09-05; v1, v2 and v3 answer 404, so earlier majors are already removed.
+    No version-negotiation header is documented.
+endpoints_published:
+  - path: /v4.1/updates
+    docs_name: get/update
+    status_unauthenticated: 403
+  - path: /v4.1/search-location
+    docs_name: get/search-location
+    status_unauthenticated: 403
+  - path: /v4.1/search-company
+    docs_name: get/search-company
+    status_unauthenticated: 403
+  - path: /v4.1/request-source
+    docs_name: get/request-source
+    status_unauthenticated: 403
+  - path: /v4.1/request-company
+    docs_name: get/request-company
+    status_unauthenticated: 403
+error_envelope:
+  shape: '{"detail": "<message>"}'
+  format: custom
+  rfc9457: false
+  content_type: application/json
+  note: >-
+    The envelope is the Django REST Framework default, observed on live 403 and 406
+    responses. Contify publishes no error reference on a public page; see
+    errors/contify-problem-types.yml.
+  detail: errors/contify-problem-types.yml
+pagination:
+  style: unknown
+  params: []
+  response_fields: []
+  note: >-
+    No pagination contract is published on any public Contify page and the reference is
+    login-gated, so nothing is recorded. Not asserted as absent.
+sorting_and_filtering:
+  sort_param: sort_by
+  sort_values_evidenced:
+    - date
+  filter_params_published:
+    - ticker_symbol
+    - sentiment_id
+    - source_location_id
+    - company_hq_location_id
+    - published_by_company_id
+  query_language: >-
+    Boolean advanced query supported per https://www.contify.com/news-api/ ; the syntax
+    reference is behind the developer-portal login.
+  note: >-
+    Parameter names are quoted from Contify's v4 announcement and its published curl
+    examples. 15+ metadata fields are advertised; the field list is not published publicly.
+field_expansion:
+  supported: unknown
+metadata:
+  supported: unknown
+request_tracing:
+  request_id_header: none-observed
+  note: No correlation/request-id header was returned on the observed 403/406 responses.
+rate_limit_signaling:
+  headers_observed: []
+  status_on_exhaustion: unknown
+  note: >-
+    "Configurable rate limits that scale with your subscription tier"
+    (https://www.contify.com/news-api/) — no numbers, no header names, no exhaustion
+    status code published. No RateLimit-* or X-RateLimit-* header appeared on the
+    unauthenticated responses observed. See rate-limits/contify-rate-limits.yml.
+  detail: rate-limits/contify-rate-limits.yml
+idempotency:
+  supported: false
+  coverage: none
+  header: null
+  scope: []
+  retention: null
+  note: >-
+    No idempotency key, replay-protection header or retry-safety contract is documented
+    anywhere Contify publishes publicly, and none appeared on the live surface. Recorded
+    as coverage: none. NO Idempotency pointer is wired in apis.yml.
+reversibility:
+  grade: na
+  applies: false
+  note: >-
+    Every endpoint Contify publishes an example for is a GET against a read-only news
+    corpus (/updates, /search-location, /search-company) or a coverage request queued for
+    Contify's own editorial team (/request-source, /request-company), which creates no
+    consumer-owned resource to reverse. Contify's marketing page lists POST/PUT/DELETE as
+    supported methods, but no write operation, no reversal operation and no reversal
+    window is documented on any public page, and the reference is login-gated. Recorded as
+    na — an honest not-applicable, not a zero. NEVER assert a reversal window Contify
+    does not state.
+  reversal_operations: []
+  windows: []
+dry_run_mode:
+  supported: false
+  note: No dry-run, preview or simulate mode is documented.
+delivery:
+  pull: REST/JSON over HTTPS
+  push: webhooks
+  detail: asyncapi/contify-webhooks.yml
+cross_links:
+  authentication: authentication/contify-authentication.yml
+  errors: errors/contify-problem-types.yml
+  lifecycle: lifecycle/contify-lifecycle.yml
+  rate_limits: rate-limits/contify-rate-limits.yml
+  webhooks: asyncapi/contify-webhooks.yml
+checked: '2026-09-05'

@@ -1,0 +1,74 @@
+generated: '2026-09-05'
+method: searched
+source: https://www.contify.com/resources/blog/
+note: >-
+  Contify publishes no dedicated changelog or release-notes page and no RSS release feed.
+  What it does publish is a dated "What's New With Contify" product-update series on its
+  blog, plus dated API release announcements. That series IS the changelog, so it is
+  captured here as one. Entries are the recent window only, each with the publish date
+  read from the post's own datePublished metadata. There is no version number attached to
+  a platform release; only the Business News API carries a version (v4.1 in the URI path).
+scheme:
+  platform: dated-blog-posts
+  api: uri-path-major-minor
+  current_api_version: v4.1
+  changelog_url: null
+  release_feed: null
+entries:
+  - date: '2026-07-02'
+    title: Here's What's New With Contify — July 2026
+    url: https://www.contify.com/resources/blog/contify-product-updates-july/
+    scope: platform
+    breaking: false
+    highlights:
+      - Redesigned Dashboard experience
+      - Insight Alerts
+  - date: '2026-03-30'
+    title: Here's What's New With Contify — March 2026
+    url: https://www.contify.com/resources/blog/contify-march-2026-product-updates/
+    scope: platform
+    breaking: false
+    highlights:
+      - AI-powered sourcing
+      - Deeper Ask Athena integration
+  - date: '2025-10-01'
+    title: Introducing Snowflake Integration
+    url: https://www.contify.com/resources/blog/snowflake-ai-company-market-intelligence-integration/
+    scope: integrations
+    breaking: false
+    highlights:
+      - AI-enriched intelligence delivered into Snowflake
+  - date: '2025-07-31'
+    title: >-
+      Announcing Business News API v4 — auto-generated key highlights, translations, and
+      new advanced endpoints
+    url: https://www.contify.com/resources/blog/business-news-api-v4/
+    scope: api
+    version: v4
+    breaking: false
+    additions:
+      - key_highlights field on the updates endpoint, on by default
+      - story-level sentiment field and sentiment_id filter
+      - ticker_symbol filter, symbol.exchange format
+      - source_location_id filter
+      - company_hq_location_id filter
+      - published_by_company_id filter
+      - new get/request-source endpoint
+      - auto-translation to English from 117+ languages
+  - date: '2025-03-12'
+    title: Here's What's New With Contify — March 2025
+    url: https://www.contify.com/resources/blog/product-updates-contify-march-2025/
+    scope: platform
+    breaking: false
+  - date: '2024-12-30'
+    title: December 2024 Product Updates
+    url: https://www.contify.com/resources/blog/product-updates-contify-december-2024/
+    scope: platform
+    breaking: false
+gaps:
+  - No dedicated changelog page or release-notes feed at a stable URL.
+  - No breaking-change notice, migration guide or deprecation entry in any post reviewed.
+  - >-
+    The v3 to v4 transition is announced as an addition, yet https://api.contify.com/v3/
+    now returns 404 — a removal that no published entry records.
+checked: '2026-09-05'

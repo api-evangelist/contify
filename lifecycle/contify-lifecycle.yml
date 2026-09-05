@@ -1,0 +1,82 @@
+generated: '2026-09-05'
+method: searched
+source: https://www.contify.com/news-api/
+supporting_sources:
+  - https://www.contify.com/resources/blog/business-news-api-v4/
+  - https://api.contify.com/v4.1/updates
+versioning:
+  scheme: uri-path
+  current: v4.1
+  docs: https://developer.contify.com/api/login/?next=/api/
+  note: >-
+    The version is the first path segment, e.g. https://api.contify.com/v4.1/updates.
+    Contify's own published curl examples use v4.1 while the announcement post calls the
+    release "v4"; both answer on the live host.
+  probed:
+    - version: v4.1
+      url: https://api.contify.com/v4.1/updates
+      status: 403
+      present: true
+    - version: v4
+      url: https://api.contify.com/v4/updates
+      status: 403
+      present: true
+    - version: v3
+      url: https://api.contify.com/v3/updates
+      status: 404
+      present: false
+    - version: v2
+      url: https://api.contify.com/v2/updates
+      status: 404
+      present: false
+    - version: v1
+      url: https://api.contify.com/v1/updates
+      status: 404
+      present: false
+  checked: '2026-09-05'
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  deprecation_header: unknown
+  note: >-
+    No deprecation policy, sunset schedule or RFC 8594 Sunset/Deprecation header support is
+    published on any public Contify page. v1, v2 and v3 are already gone from the live host
+    with no published removal notice, so the removal cadence is unannounced. NO Deprecation
+    pointer is wired in apis.yml.
+sla:
+  url: https://www.contify.com/news-api/
+  uptime_target: 99.9%
+  evidence: >-
+    "99.9% uptime SLA — Robust infrastructure powering real-time monitoring to ensure your
+    applications always have access to critical business news data." Stated on the Business
+    News API product page; the contractual SLA document itself is not published and is
+    presumably part of the enterprise agreement.
+  contract_published: false
+status_page:
+  url: null
+  note: >-
+    No status page exists. status.contify.com and support.contify.com do not resolve
+    (NXDOMAIN, 2026-09-05) and https://contify.statuspage.io/ redirects to Atlassian's own
+    product marketing page, i.e. the subdomain is unclaimed. A 99.9% uptime SLA is
+    advertised with no public availability reporting behind it. NO StatusPage pointer is
+    wired in apis.yml.
+  probed:
+    - url: https://status.contify.com/
+      status: 0
+      result: NXDOMAIN
+    - url: https://contify.statuspage.io/
+      status: 200
+      result: redirects to https://www.atlassian.com/software/statuspage — unclaimed
+  checked: '2026-09-05'
+support:
+  url: https://www.contify.com/contact-us/
+  channels:
+    - sales and support contact form
+  note: >-
+    No public help centre, community forum or developer support channel. help.contify.com
+    and support.contify.com do not resolve.
+deprecated_operations: []
+gaps:
+  - No status page or public uptime reporting behind the advertised 99.9% SLA.
+  - No deprecation or sunset policy; three major versions were removed without a notice.
+  - No public SLA document.

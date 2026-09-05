@@ -1,0 +1,52 @@
+generated: '2026-09-05'
+method: searched
+source: registry searches + https://github.com/contifyhub
+note: >-
+  No first-party Contify client library exists on any public package registry, and the
+  Contify GitHub organisation publishes no repositories. Contify's own API page promises
+  "comprehensive documentation" but names no SDK. Recorded as a verified zero, not as
+  "not checked". NO SDKs pointer is wired in apis.yml, because there is no SDK.
+package_count: 0
+official_count: 0
+packages: []
+registries_searched:
+  - registry: npm
+    query: contify
+    endpoint: https://registry.npmjs.org/-/v1/search?text=contify
+    result: no matching package
+    checked: '2026-09-05'
+  - registry: pypi
+    query: contify, contify-api, contify-news
+    endpoint: https://pypi.org/pypi/<name>/json
+    result: 404 for every candidate
+    checked: '2026-09-05'
+  - registry: rubygems
+    query: contify
+    endpoint: https://rubygems.org/api/v1/search.json?query=contify
+    result: no matching gem
+    checked: '2026-09-05'
+  - registry: crates.io
+    query: contify
+    endpoint: https://crates.io/api/v1/crates?q=contify
+    result: no matching crate
+    checked: '2026-09-05'
+  - registry: packagist
+    query: contify
+    endpoint: https://packagist.org/search.json?q=contify
+    result: no matching package
+    checked: '2026-09-05'
+  - registry: nuget
+    query: contify
+    endpoint: https://azuresearch-usnc.nuget.org/query?q=contify
+    result: no matching package
+    checked: '2026-09-05'
+source_code:
+  github_org: https://github.com/contifyhub
+  public_repos: 0
+  org_created: '2014-10-22'
+  org_updated: '2024-05-16'
+  checked: '2026-09-05'
+  note: >-
+    The organisation exists and is linked from apis.yml, but holds zero public
+    repositories, so there is no SDK, sample client, .proto or Postman collection to
+    harvest from it.

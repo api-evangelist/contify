@@ -1,0 +1,46 @@
+generated: '2026-09-05'
+method: searched
+source: https://www.contify.com/news-api/
+spec_type: none
+asyncapi_published: false
+note: >-
+  Contify advertises a real webhook delivery surface for the Business News API but
+  publishes no AsyncAPI document and no public event catalogue — the event/payload
+  reference sits behind the developer.contify.com login. This artifact records the
+  webhook surface that Contify itself describes, and nothing more. No channel, event
+  name, payload schema, retry policy or signature scheme has been invented.
+webhooks:
+  advertised: true
+  evidence:
+    - quote: >-
+        "Webhook-based integration — Eliminate repeated querying with instant delivery of
+        filtered business news updates, ensuring immediate access to your systems and
+        portals."
+      url: https://www.contify.com/news-api/
+      status: 200
+    - quote: >-
+        "Scalable APIs and webhook delivery with 15+ metadata fields"
+      url: https://www.contify.com/news-api/
+      status: 200
+  direction: provider-to-consumer push
+  trigger: >-
+    New business-news stories matching the subscriber's configured filters, delivered as
+    they are published rather than polled from the updates endpoint.
+  payload: >-
+    Not published. Contify states the same 15+ metadata fields the REST updates endpoint
+    returns; the field list and JSON schema are behind the login.
+  subscription_management:
+    documented_publicly: false
+    note: >-
+      An external API directory records a "webhooks management API", but Contify publishes
+      no such reference on a public page, so it is not asserted here.
+  signature_verification: unknown
+  retry_policy: unknown
+  event_catalog_url: null
+channels: []
+gaps:
+  - No AsyncAPI document published.
+  - No public event catalogue, event names, or payload schemas.
+  - No published webhook signature/verification scheme.
+  - No published retry, ordering or at-least-once delivery guarantee.
+checked: '2026-09-05'

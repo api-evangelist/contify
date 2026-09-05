@@ -3,89 +3,72 @@ specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
 provider: Contify
 providerId: contify
+generated: '2026-09-05'
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-05'
+method: searched
+source: https://www.contify.com/news-api/
+note: >-
+  REPLACES the 2026-05-04 bulk-sweep scaffold, which carried invented per-tier numbers
+  (10/100/1000 rpm, 1k/100k monthly quotas) that Contify has never published. Those values
+  were fabricated defaults and have been removed. Contify publishes NO rate-limit numbers,
+  no window, no burst ceiling, no response headers and no exhaustion status code. The only
+  public statement is that limits are configurable per subscription tier. An honest zero is
+  data; a plausible invented limit is not.
 tags:
   - Competitive Intelligence
   - Market Intelligence
   - News
-  - Strategies
   - Rate Limiting
   - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Contify API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
-  with published provider limits.
+description: >-
+  Rate-limit record for the Contify Business News API. Contify advertises tier-scaled,
+  configurable rate limits but publishes no numeric limit, window, burst ceiling or
+  runtime signalling header on any public page; the API reference is behind the
+  developer.contify.com login.
+limit_count: 0
+published: false
+documented_claim:
+  quote: >-
+    "Flexible rate limiting — Configurable rate limits that scale with your subscription
+    tier, ensuring consistent API performance even during traffic spikes."
+  url: https://www.contify.com/news-api/
+  status: 200
+  numbers_given: false
 headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+  limit: null
+  remaining: null
+  reset: null
+  retryAfter: null
+  policy: null
+  observed: []
+  note: >-
+    No RateLimit-* , X-RateLimit-* or Retry-After header was present on the live
+    unauthenticated responses observed against https://api.contify.com/v4.1/updates
+    (HTTP 403) and .../updates?format=api (HTTP 406) on 2026-09-05. An authenticated
+    response could still carry them; that could not be observed without a key.
 responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Contify News API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Contify News API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Contify News API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Contify News API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Contify News API
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  throttled: null
+  quotaExceeded: null
+  note: The status code returned on exhaustion is not documented.
+limits: []
+policies: []
+gaps:
+  - No numeric rate limit or quota published for any tier.
+  - No rate-limit response headers documented, and none observed unauthenticated.
+  - No exhaustion status code or backoff guidance published.
+  - No public quota page; limits are negotiated per subscription.
+evidence:
+  - url: https://www.contify.com/news-api/
+    status: 200
+    finding: tier-scaled configurable limits claimed, no numbers
+  - url: https://api.contify.com/v4.1/updates
+    status: 403
+    finding: no rate-limit headers on the response
+  - url: https://developer.contify.com/api/login/?next=/api/
+    status: 200
+    finding: API reference is login-gated; any published limits are behind it
+checked: '2026-09-05'
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

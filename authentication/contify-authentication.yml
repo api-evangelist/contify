@@ -1,0 +1,49 @@
+generated: '2026-09-05'
+method: searched
+source: https://www.contify.com/resources/blog/business-news-api-v4/
+docs: https://developer.contify.com/api/login/?next=/api/
+note: >-
+  Contify publishes no OpenAPI, so this profile was not derived from a spec. It was read
+  from the verbatim curl examples Contify itself publishes in its Business News API v4
+  announcement (screenshots at
+  https://www.contify.com/wp-content/uploads/2025/07/Request-Source-Curl-1024x128.png and
+  Ticker-Symbol-1024x99.png), and confirmed against the live API: an unauthenticated
+  GET https://api.contify.com/v4.1/updates returns HTTP 403
+  {"detail":"Authentication credentials were not provided."}. The full reference sits
+  behind a login at developer.contify.com.
+summary:
+  types:
+    - apiKey
+  api_key_in:
+    - header
+  oauth2_flows: []
+  scheme_count: 2
+schemes:
+  - name: APPID
+    type: apiKey
+    in: header
+    parameter_name: APPID
+    description: >-
+      Application identifier issued to the API consumer. Sent on every request alongside
+      APPSECRET; both headers are required.
+    sources:
+      - https://www.contify.com/resources/blog/business-news-api-v4/
+  - name: APPSECRET
+    type: apiKey
+    in: header
+    parameter_name: APPSECRET
+    description: >-
+      Application secret paired with APPID. Sent as a plain request header over TLS;
+      there is no published rotation, expiry or scope model.
+    sources:
+      - https://www.contify.com/resources/blog/business-news-api-v4/
+observed:
+  - url: https://api.contify.com/v4.1/updates
+    method: GET
+    status: 403
+    body: '{"detail":"Authentication credentials were not provided."}'
+    checked: '2026-09-05'
+gaps:
+  - No OAuth 2.0 or OpenID Connect surface is published or advertised.
+  - No scope or permission model is published; the key pair is all-or-nothing.
+  - No key-rotation, expiry, or revocation policy is published on a public page.

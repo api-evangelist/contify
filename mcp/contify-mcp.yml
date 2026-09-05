@@ -1,0 +1,34 @@
+generated: '2026-09-05'
+method: searched
+status: none
+source: >-
+  https://www.contify.com/news-api/ , https://github.com/contifyhub , MCP registry and
+  web search
+note: >-
+  Contify publishes no MCP server, hosted or local. There is no mcp.contify.com, no
+  @contify npm package, no entry in any MCP registry, and no mention of MCP or the Model
+  Context Protocol anywhere on contify.com. Contify does place "Ask ChatGPT / Claude /
+  Perplexity / Gemini" prompt links in its pages, but those are marketing deep links into
+  consumer chat products, not an agent-callable surface it operates.
+  No candidate tool list is derived here: Contify publishes no OpenAPI, and a tool list
+  invented from five endpoint names read off a blog post would read as a schema that does
+  not exist. NO MCPServer pointer is wired in apis.yml.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+server: null
+tools: []
+searched:
+  - target: https://www.contify.com/ (site-wide, incl. llms.txt index)
+    result: no MCP mention
+  - target: https://github.com/contifyhub
+    result: 0 public repositories
+  - target: npm registry, query "contify"
+    result: no package
+  - target: web search "Contify MCP server model context protocol"
+    result: no Contify result
+checked: '2026-09-05'

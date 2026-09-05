@@ -31,16 +31,19 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
-position: Consuming
+position: Producing
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/contify.png
 tags:
   - Competitive Intelligence
   - Market Intelligence
+  - Business News
   - News
+  - Artificial Intelligence
+  - Data
   - Strategies
 created: '2025-02-09'
-modified: '2026-04-28'
+modified: '2026-09-05'
 specificationVersion: '0.23'
 apis:
   - aid: contify:news-api
@@ -52,13 +55,14 @@ apis:
       - REST
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.contify.com/news-api/
+    baseURL: https://api.contify.com/v4.1/
     properties:
       - url: https://www.contify.com/news-api/
         type: Documentation
       - url: https://developer.contify.com/
         type: DeveloperPortal
-      - url: https://www.contify.com/news-api/
-        type: Signup
+      - url: https://www.contify.com/news-api-early-access/
+        type: SignUp
     description: >-
       The Contify News API is a developer-friendly REST/JSON API that
       aggregates, deduplicates, and enriches business news from over a million
@@ -84,13 +88,38 @@ common:
   - type: DeveloperPortal
     url: https://developer.contify.com/
   - type: Blog
-    url: https://www.contify.com/blog/
+    url: https://www.contify.com/resources/blog/
   - type: PrivacyPolicy
     url: https://www.contify.com/privacy-policy/
   - type: TermsOfService
-    url: https://www.contify.com/terms-of-service/
+    url: https://www.contify.com/terms-conditions/
   - type: ContactUs
     url: https://www.contify.com/contact-us/
+
+  - type: Authentication
+    url: authentication/contify-authentication.yml
+  - type: Conventions
+    url: conventions/contify-conventions.yml
+  - type: ErrorCatalog
+    url: errors/contify-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/contify-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/contify-changelog.yml
+  - type: Conformance
+    url: conformance/contify-conformance.yml
+  - type: Compliance
+    url: https://www.contify.com/news-api/
+  - type: Webhooks
+    url: asyncapi/contify-webhooks.yml
+  - type: LLMsTxt
+    url: llms/contify-llms.txt
+  - type: Support
+    url: https://www.contify.com/contact-us/
+  - type: SignUp
+    url: https://www.contify.com/news-api-early-access/
+  - type: Login
+    url: https://app.contify.com/accounts/site-login/
 
   - type: Integrations
     url: https://www.contify.com/integrations/
@@ -113,3 +142,8 @@ integrations:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-05'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v3

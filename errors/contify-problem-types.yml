@@ -1,0 +1,54 @@
+generated: '2026-09-05'
+method: probed
+source: live unauthenticated requests against https://api.contify.com/v4.1/
+format: custom
+rfc9457: false
+envelope:
+  shape: '{"detail": "<human-readable message>"}'
+  content_type: application/json
+  field: detail
+  note: >-
+    The Django REST Framework default error envelope. There is no `type`, `title`,
+    `status`, `instance` or `errors[]` member, so this is NOT RFC 9457
+    application/problem+json. No machine-readable error code is returned.
+note: >-
+  Contify publishes no OpenAPI and no public error reference — the API reference is behind
+  the developer.contify.com login — so nothing here is derived from a spec. Each entry
+  below was observed on a live request on 2026-09-05 and carries the exact body returned.
+  This is a partial catalogue of the unauthenticated surface only; the authenticated
+  error set (validation, quota, throttling) could not be observed and is NOT guessed at.
+problems:
+  - status: 403
+    title: Authentication credentials were not provided
+    body: '{"detail":"Authentication credentials were not provided."}'
+    observed_on:
+      - https://api.contify.com/v4.1/updates
+      - https://api.contify.com/v4.1/search-location
+      - https://api.contify.com/v4.1/search-company
+      - https://api.contify.com/v4.1/request-source
+      - https://api.contify.com/v4.1/request-company
+      - https://api.contify.com/v4/updates
+    remediation: Send both the APPID and APPSECRET request headers.
+    checked: '2026-09-05'
+  - status: 406
+    title: Could not satisfy the request Accept header
+    body: '{"detail":"Could not satisfy the request Accept header."}'
+    observed_on:
+      - https://api.contify.com/v4.1/updates?format=api
+    remediation: Request application/json; the browsable-API renderer is not enabled.
+    checked: '2026-09-05'
+  - status: 404
+    title: Not found
+    body: HTML error page, not JSON
+    observed_on:
+      - https://api.contify.com/v3/updates
+      - https://api.contify.com/v4.1/companies
+    note: >-
+      An unrouted path falls through to an HTML 404 rather than the JSON envelope, so a
+      client cannot parse a 404 the same way it parses a 403.
+    checked: '2026-09-05'
+gaps:
+  - No public error-code reference or catalogue is published.
+  - No stable machine-readable error identifier is returned, only English prose in `detail`.
+  - Responses are not application/problem+json (RFC 9457).
+  - Unrouted 404s return HTML, breaking a JSON-only client contract.
