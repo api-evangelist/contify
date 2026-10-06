@@ -43,7 +43,7 @@ tags:
   - Data
   - Strategies
 created: '2025-02-09'
-modified: '2026-09-05'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: contify:news-api
@@ -75,6 +75,8 @@ apis:
       sales and marketing alerts, and providing news context to AI agents.
 
 common:
+  - url: https://www.contify.com/resources/blog/feed/
+    type: BlogRSS
   - type: DomainSecurity
     url: security/contify-domain-security.yml
   - type: GitHubOrganization
