@@ -1,4 +1,4 @@
-# Contify (contify)
+# Contify
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,52 +66,116 @@
 
 Contify is an AI-powered market and competitive intelligence platform that helps businesses track competitor activity, market trends, and industry news. It exposes a REST News API that delivers structured, deduplicated, and enriched business news data on companies, industries, and topics.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/contify/refs/heads/main/apis.yml)
+**Areas:** Competitive Intelligence · Market Intelligence · Business News · News · Artificial Intelligence · Data · Strategies
 
-## Scope
+## Contify on APIs.io
 
-- **Type:** Contract
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Contify is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/contify/](https://apis.io/providers/contify/)** — or go straight to one of the APIs or properties below.
 
-## Tags:
+### APIs (1)
 
- - Competitive Intelligence, Market Intelligence, News, Strategies
+- [Contify News API](https://apis.io/apis/contify/news-api/) — The Contify News API is a developer-friendly REST/JSON API that aggregates, deduplicates, and enriches business news from over a million curated sources,…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-09
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### AsyncAPI (1)
 
-### Contify News API
-The Contify News API is a developer-friendly REST/JSON API that aggregates, deduplicates, and enriches business news from over a million curated sources, covering 700,000+ companies and 117+ languages with auto-translation to English. It provides advanced entity tagging, sentiment analysis, AI-generated highlights, and 15+ queryable metadata fields, with delivery via API endpoints and webhook integration backed by a 99.9% uptime SLA. Common use cases include feeding competitive intelligence dashboards, tracking key accounts and industries, powering sales and marketing alerts, and providing news context to AI agents.
+Event-driven and webhook contracts.
 
-**Human URL:** [https://www.contify.com/news-api/](https://www.contify.com/news-api/)
+- [Contify Webhooks](https://apis.io/asyncapis/contify/contify-webhooks/)
 
-#### Tags:
+#### Security (2)
 
- - Business News, Market Intelligence, News, REST
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Properties
+- [Contify Authentication](https://apis.io/security/contify/contify-authentication/)
+- [Contify Domain Security](https://apis.io/security/contify/contify-domain-security/)
 
-- [Documentation](https://www.contify.com/news-api/)
-- [DeveloperPortal](https://developer.contify.com/)
-- [SignUp](https://www.contify.com/news-api/)
+#### Plans and pricing (1)
 
-## Common Properties
+Published plans, tiers and prices.
+
+- [Contify Plans Pricing](https://apis.io/plans/contify/contify-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Contify Rate Limits](https://apis.io/rate-limits/contify/contify-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Contify Finops](https://apis.io/finops/contify/contify-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.contify.com/)
 - [Documentation](https://www.contify.com/news-api/)
-- [DeveloperPortal](https://developer.contify.com/)
-- [Blog](https://www.contify.com/blog/)
-- [PrivacyPolicy](https://www.contify.com/privacy-policy/)
-- [TermsOfService](https://www.contify.com/terms-of-service/)
-- [ContactUs](https://www.contify.com/contact-us/)
+- [Sign up](https://www.contify.com/news-api-early-access/)
+- [Support](https://www.contify.com/contact-us/)
+- [Blog](https://www.contify.com/resources/blog/)
+- [Compliance](https://www.contify.com/news-api/)
+- [Terms of service](https://www.contify.com/terms-conditions/)
+- [Privacy policy](https://www.contify.com/privacy-policy/)
+- [GitHub](https://github.com/contifyhub)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 39.6** — developing · rubric 0.25.0 · scored 2026-10-23
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 42.1 |
+
+**Agent readiness 25.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 27.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/contify/](https://apis.io/providers/contify/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Contify: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/contify/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
